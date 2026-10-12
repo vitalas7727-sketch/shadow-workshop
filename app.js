@@ -40,7 +40,8 @@ function goTo(view, addToHistory = true) {
 if (!document.querySelector(`#view-${view}`)) return;
 
 if (view !== currentView && addToHistory) {
-viewHistory.push(currentView);
+  viewHistory.push(currentView);
+  window.history.pushState({ view: view }, '', '#' + view);
 }
 
 currentView = view;
