@@ -217,6 +217,14 @@ $all('[data-go]').forEach(button => button.addEventListener('click', () => { if(
 $('#openSettingsTop').addEventListener('click',()=>goTo('settings'));
 $('#mobileMenu').addEventListener('click',openMobileNav);
 $('#homeShortcut').addEventListener('click',()=>goTo('home'));
+window.addEventListener('popstate', () => {
+if (viewHistory.length > 0) {
+const previousView = viewHistory.pop();
+goTo(previousView, false);
+} else if (currentView !== 'home') {
+goTo('home', false);
+}
+});
 const mask = document.createElement('div'); mask.className='mobile-nav-mask'; mask.id='mobileNavMask'; document.body.appendChild(mask); mask.addEventListener('click',closeMobileNav);
 
 $('#showMaterialForm').addEventListener('click',()=>openForm('materialForm')); $('#closeMaterialForm').addEventListener('click',()=>closeForm('materialForm'));
