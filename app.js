@@ -175,6 +175,7 @@ $all('.nav-item').forEach(button => button.addEventListener('click', () => goTo(
 $all('[data-go]').forEach(button => button.addEventListener('click', () => { if(button.dataset.go==='tasks') goTo('tasks'); else goTo(button.dataset.go); }));
 $('#openSettingsTop').addEventListener('click',()=>goTo('settings'));
 $('#mobileMenu').addEventListener('click',openMobileNav);
+$('#homeShortcut').addEventListener('click',()=>goTo('home'));
 const mask = document.createElement('div'); mask.className='mobile-nav-mask'; mask.id='mobileNavMask'; document.body.appendChild(mask); mask.addEventListener('click',closeMobileNav);
 
 $('#showMaterialForm').addEventListener('click',()=>openForm('materialForm')); $('#closeMaterialForm').addEventListener('click',()=>closeForm('materialForm'));
