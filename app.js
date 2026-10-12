@@ -8,7 +8,8 @@ const DEFAULT_STATE = {
 let state = loadState();
 let currentPrompt = { text: '', chatUrl: '', helper: '' };
 let toastTimer;
-
+let currentView = 'home';
+let viewHistory = [];
 function loadState() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
