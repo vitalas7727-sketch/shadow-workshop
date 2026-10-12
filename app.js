@@ -36,36 +36,76 @@ function showToast(message) { const toast = $('#toast'); toast.textContent = mes
 function $(selector, parent = document) { return parent.querySelector(selector); }
 function $all(selector, parent = document) { return [...parent.querySelectorAll(selector)]; }
 function titleForView(view) { return ({home:'ОБЗОР',materials:'МАТЕРИАЛЫ',tasks:'ЗАДАЧИ',answers:'ОТВЕТЫ И СРАВНЕНИЕ',decisions:'РЕШЕНИЯ',settings:'НАСТРОЙКИ'})[view] || 'ОБЗОР'; }
-function goTo(view) {
-  $all('.view').forEach(el => el.classList.toggle('active', el.id === `view-${view}`));
-  $all('.nav-item').forEach(el => el.classList.toggle('active', el.dataset.view === view));
-  $('#crumbTitle').textContent = titleForView(view);
-  closeMobileNav();
-  if (view === 'materials') renderMaterials();
-  if (view === 'tasks') renderTasks();
-  if (view === 'answers') refreshAnswerTaskSelect();
-  if (view === 'decisions') renderDecisions();
-  window.scrollTo({top:0,behavior:'smooth'});
+function goTo(view, addToHistory = true) {
+if (!document.querySelector(`#view-${view}`)) return;
+
+if (view !== currentView && addToHistory) {
+viewHistory.push(currentView);
 }
-function openMobileNav() { $('.sidebar').classList.add('open'); $('#mobileNavMask').classList.add('visible'); }
-function closeMobileNav() { $('.sidebar').classList.remove('open'); $('#mobileNavMask').classList.remove('visible'); }
-function updateCounters() {
-  const openTasks = state.tasks.filter(t => !['Завершена','Отложена'].includes(t.status)).length;
-  $('#navOpenCount').textContent = openTasks;
-  $('#navMaterialCount').textContent = state.materials.length;
-  $('#navTaskCount').textContent = state.tasks.length;
-  $('#statMaterials').textContent = state.materials.length;
-  $('#statTasks').textContent = openTasks;
-  $('#statAnswers').textContent = state.answers.length;
-  $('#statDecisions').textContent = state.decisions.length;
+
+currentView = view;
+
+$all('.view').forEach(el => el.classList.toggle('active', el.id === `view-${view}`));
+$all('.nav-item').forEach(el => el.classList.toggle('active', el.dataset.view === view));
+$ ( '#crumbTitle' ) . textContent = titleForView ( view ) ;
+closeMobileNav ( ) ;
+if  ( view === 'materials' )  renderMaterials ( ) ;
+if  ( view === 'tasks' )  renderTasks ( ) ;
+if  ( view === 'answers' )  refreshAnswerTaskSelect ( ) ;
+if  ( view === 'decisions' )  renderDecisions ( ) ;
+window.scrollTo ( { top : 0 , behavior : ' smooth ' } ) ;
 }
-function typeIcon(type) { return ({'Изображение':'▧','Видео':'▶','Аудио / музыка':'♫','Сценарий / текст':'T','Документ':'▤','Референс':'◇','Другое':'◈'})[type] || '◈'; }
-function renderHome() {
-  updateCounters();
-  const container = $('#recentTasks');
-  const recent = [...state.tasks].sort((a,b)=>b.createdAt-a.createdAt).slice(0,3);
-  if (!recent.length) {
-    container.className = 'empty-state';
+function  openMobileNav ( )  {  $ ( '.sidebar' ) . classList . add ( 'open' ) ; $ ( '#mobileNavMask' ) . classList . add ( 'visible' ) ; }
+function  closeMobileNav ( )  {  $ ( '.sidebar' ) . classList . remove ( 'open' ) ; $ ( '#mobileNavMask' ) . classList . remove ( 'visible' ) ; }
+function  updateCounters ( )  {
+  const  openTasks = состояние . задачи . filter ( t = > ! [ 'Завершена' , ' Отложена' ] . includes ( t.status ) ) . длина ;
+  $ ( '#navOpenCount' ) . textContent = openTasks ;
+  $ ( '#navMaterialCount' ) . textContent = state . materials . length ;
+  $ ( '#navTaskCount' ) . textContent = state . tasks . length ;
+  $ ( '#statMaterials' ) . textContent = state . materials . length ;
+  $ ( '#statTasks' ) . textContent = openTasks ;
+  $ ( '#statAnswers' ) . textContent = state . answers . length ;
+  $ ( '#statDecisions' ) . textContent = state . decisions . length ;
+}
+function  typeIcon ( type ) { return ( { 'Видео ' : ' ▶' , 'Аудио/музыка ' : '♫' , 'Сценарий/текст' : ' T' , ' Документ ' : ' ▤' , 'Референс' : ' ◇' , 'Другое' : '◈' } ) ] || '◈' ; }   
+function  renderHome ( )  {
+  updateCounters ( ) ;
+  const  container = $ (;
+ ' 
+# 
+recentTasks 
+' 
+)
+ ... 
+state.tasks 
+] 
+.sort 
+( 
+( 
+a
+ , 
+b 
+)
+ = 
+> 
+b.createdAt
+ - 
+a.createdAt 
+)
+ .slice 
+( 
+0
+ , 
+3 
+) 
+;
+​
+​
+​
+​
+  const recent = [
+  если  ( ! recent . length )  {
+    container.className = ' empty-state ' ;
     container.innerHTML = '<div class="empty-icon">☷</div><b>Пока задач нет</b><p>Создай первую задачу — например, проверить кадр Семёна на непрерывность внешности.</p><button class="btn btn-small btn-secondary" data-go="tasks">Создать задачу</button>';
   } else {
     container.className = 'task-list compact-list';
