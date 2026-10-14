@@ -1,10 +1,14 @@
-const CACHE_NAME = 'shadow-workshop-v03';
+
+'use strict';
+
+const CACHE_NAME = 'shadow-workshop-v04';
 
 const APP_SHELL = [
   './',
   './index.html',
   './styles.css',
   './app.js',
+  './navigation.js',
   './manifest.webmanifest',
   './icon.svg',
   './icon-192.png',
@@ -37,6 +41,7 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
+
   if (url.origin !== self.location.origin) return;
 
   event.respondWith(
