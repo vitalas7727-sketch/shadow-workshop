@@ -31,24 +31,12 @@
       </div>
 
       <nav class="nav" aria-label="Главная навигация">
-        <button class="nav-item active" data-view="home">
-          <span>▦</span> Обзор <em id="navOpenCount">0</em>
-        </button>
-        <button class="nav-item" data-view="materials">
-          <span>▧</span> Материалы <em id="navMaterialCount">0</em>
-        </button>
-        <button class="nav-item" data-view="tasks">
-          <span>☷</span> Задачи <em id="navTaskCount">0</em>
-        </button>
-        <button class="nav-item" data-view="answers">
-          <span>⇄</span> Ответы и сравнение
-        </button>
-        <button class="nav-item" data-view="decisions">
-          <span>✓</span> Решения
-        </button>
-        <button class="nav-item" data-view="settings">
-          <span>⚙</span> Настройки
-        </button>
+        <button class="nav-item active" data-view="home"><span>▦</span> Обзор <em id="navOpenCount">0</em></button>
+        <button class="nav-item" data-view="materials"><span>▧</span> Материалы <em id="navMaterialCount">0</em></button>
+        <button class="nav-item" data-view="tasks"><span>☷</span> Задачи <em id="navTaskCount">0</em></button>
+        <button class="nav-item" data-view="answers"><span>⇄</span> Ответы и сравнение</button>
+        <button class="nav-item" data-view="decisions"><span>✓</span> Решения</button>
+        <button class="nav-item" data-view="settings"><span>⚙</span> Настройки</button>
       </nav>
 
       <div class="sidebar-bottom">
@@ -59,22 +47,13 @@
 
     <main class="main-area">
       <header class="topbar">
-        <button id="mobileMenu" class="icon-button mobile-only"
-          aria-label="Открыть меню">☰</button>
+        <button id="mobileMenu" class="icon-button mobile-only" aria-label="Открыть меню">☰</button>
 
-        <button id="backShortcut" class="icon-button"
-          aria-label="Назад" title="Назад">←</button>
+        <button id="backShortcut" class="icon-button" aria-label="Назад" title="Назад">←</button>
+        <button id="homeShortcut" class="icon-button" aria-label="На главную" title="На главную">⌂</button>
+        <button id="forwardShortcut" class="icon-button" aria-label="Вперёд" title="Вперёд" disabled>→</button>
 
-        <button id="homeShortcut" class="icon-button"
-          aria-label="На главную" title="На главную">⌂</button>
-
-        <button id="forwardShortcut" class="icon-button"
-          aria-label="Вперёд" title="Нет следующих разделов"
-          disabled>→</button>
-
-        <div class="breadcrumb">
-          ПРОЕКТ <span>/</span> <b id="crumbTitle">ОБЗОР</b>
-        </div>
+        <div class="breadcrumb">ПРОЕКТ <span>/</span> <b id="crumbTitle">ОБЗОР</b></div>
 
         <div class="top-actions">
           <span class="sync-label"><i></i> Локально сохранено</span>
@@ -89,15 +68,11 @@
               <div class="eyebrow">ЕДИНАЯ РАБОЧАЯ СРЕДА</div>
               <h1>Добро пожаловать<br>в мастерскую, Виталий.</h1>
               <p>Материалы, задачи, мнения Нокса и Ворона — в одном рабочем пространстве.</p>
-
               <div class="hero-actions">
                 <button class="btn btn-primary" data-go="tasks">＋ Создать задачу</button>
-                <button class="btn btn-ghost" data-go="materials">
-                  Добавить материал <span>↗</span>
-                </button>
+                <button class="btn btn-ghost" data-go="materials">Добавить материал <span>↗</span></button>
               </div>
             </div>
-
             <div class="moon-art" aria-hidden="true">
               <div class="moon"></div>
               <div class="ridge ridge-back"></div>
@@ -119,37 +94,22 @@
 
           <div class="stats-grid">
             <article class="stat-card">
-              <div class="stat-top">
-                <span>Материалы</span>
-                <span class="stat-icon blue">▧</span>
-              </div>
+              <div class="stat-top"><span>Материалы</span><span class="stat-icon blue">▧</span></div>
               <strong id="statMaterials">0</strong>
               <small>Записано в каталог</small>
             </article>
-
             <article class="stat-card">
-              <div class="stat-top">
-                <span>Открытые задачи</span>
-                <span class="stat-icon violet">☷</span>
-              </div>
+              <div class="stat-top"><span>Открытые задачи</span><span class="stat-icon violet">☷</span></div>
               <strong id="statTasks">0</strong>
               <small>Ждут выполнения или решения</small>
             </article>
-
             <article class="stat-card">
-              <div class="stat-top">
-                <span>Ответы помощников</span>
-                <span class="stat-icon gold">⇄</span>
-              </div>
+              <div class="stat-top"><span>Ответы помощников</span><span class="stat-icon gold">⇄</span></div>
               <strong id="statAnswers">0</strong>
               <small>Сохранённые анализы</small>
             </article>
-
             <article class="stat-card">
-              <div class="stat-top">
-                <span>Решения</span>
-                <span class="stat-icon green">✓</span>
-              </div>
+              <div class="stat-top"><span>Решения</span><span class="stat-icon green">✓</span></div>
               <strong id="statDecisions">0</strong>
               <small>Зафиксированные решения</small>
             </article>
@@ -158,13 +118,9 @@
           <div class="home-columns">
             <section class="panel">
               <div class="panel-heading">
-                <div>
-                  <h3>Последние задачи</h3>
-                  <p>Недавняя работа</p>
-                </div>
+                <div><h3>Последние задачи</h3><p>Недавняя работа</p></div>
                 <button class="text-button" data-go="tasks">Все задачи →</button>
               </div>
-
               <div id="recentTasks" class="empty-state">
                 <div class="empty-icon">☷</div>
                 <b>Пока задач нет</b>
@@ -175,46 +131,26 @@
 
             <section class="panel next-panel">
               <div class="panel-heading">
-                <div>
-                  <h3>Следующий шаг</h3>
-                  <p>Что уже готово</p>
-                </div>
+                <div><h3>Следующий шаг</h3><p>Что уже готово</p></div>
               </div>
-
               <div class="step-row">
                 <span class="step-number done">1</span>
-                <div>
-                  <b>Каркас мастерской</b>
-                  <small>Навигация и рабочие разделы готовы</small>
-                </div>
+                <div><b>Каркас мастерской</b><small>Навигация и рабочие разделы готовы</small></div>
                 <span class="check">✓</span>
               </div>
-
               <div class="step-row">
                 <span class="step-number">2</span>
-                <div>
-                  <b>Проверить на Android</b>
-                  <small>Открыть по HTTPS и добавить на главный экран</small>
-                </div>
+                <div><b>Проверить на Android</b><small>Открыть по HTTPS и добавить на главный экран</small></div>
                 <span class="step-state">ДАЛЕЕ</span>
               </div>
-
               <div class="step-row">
                 <span class="step-number">3</span>
-                <div>
-                  <b>Подключить Google</b>
-                  <small>Drive и Sheets после настройки OAuth</small>
-                </div>
+                <div><b>Подключить Google</b><small>Drive и Sheets после настройки OAuth</small></div>
               </div>
-
               <div class="step-row">
                 <span class="step-number">4</span>
-                <div>
-                  <b>Добавить API-аналитиков</b>
-                  <small>Только если решим, что они нужны</small>
-                </div>
+                <div><b>Добавить API-аналитиков</b><small>Только если решим, что они нужны</small></div>
               </div>
-
               <div class="notice">
                 <span>ⓘ</span>
                 <p>Это стартовый прототип. Пока он не загружает медиа в облако и не подключён к личным чатам автоматически.</p>
@@ -235,46 +171,29 @@
 
           <form id="materialForm" class="panel form-panel hidden">
             <div class="panel-heading">
-              <div>
-                <h3>Новый материал</h3>
-                <p>Добавим запись в каталог</p>
-              </div>
+              <div><h3>Новый материал</h3><p>Добавим запись в каталог</p></div>
               <button type="button" class="icon-button" id="closeMaterialForm" aria-label="Закрыть">×</button>
             </div>
-
             <div class="form-grid">
               <label>Название
-                <input id="materialTitle" required maxlength="120"
-                  placeholder="Например: Семён — кадр у старой башни">
+                <input id="materialTitle" required maxlength="120" placeholder="Например: Семён — кадр у старой башни">
               </label>
-
               <label>Тип
                 <select id="materialType">
-                  <option>Изображение</option>
-                  <option>Видео</option>
-                  <option>Аудио / музыка</option>
-                  <option>Сценарий / текст</option>
-                  <option>Документ</option>
-                  <option>Референс</option>
-                  <option>Другое</option>
+                  <option>Изображение</option><option>Видео</option><option>Аудио / музыка</option>
+                  <option>Сценарий / текст</option><option>Документ</option><option>Референс</option><option>Другое</option>
                 </select>
               </label>
-
               <label class="full">Файл (не загружается в облако на этом этапе)
-                <input id="materialFile" type="file"
-                  accept="image/*,video/*,audio/*,.pdf,.txt,.doc,.docx,.md,.srt,.csv,.xlsx">
+                <input id="materialFile" type="file" accept="image/*,video/*,audio/*,.pdf,.txt,.doc,.docx,.md,.srt,.csv,.xlsx">
               </label>
-
               <label class="full">Ссылка на файл (например, Google Drive)
                 <input id="materialLink" type="url" placeholder="https://drive.google.com/…">
               </label>
-
               <label class="full">Описание / заметка
-                <textarea id="materialDescription" rows="2"
-                  placeholder="Версия, сцена, что важно проверить…"></textarea>
+                <textarea id="materialDescription" rows="2" placeholder="Версия, сцена, что важно проверить…"></textarea>
               </label>
             </div>
-
             <div class="form-actions">
               <span class="helper-text">Сохраняются метаданные и ссылка, а не содержимое выбранного файла.</span>
               <button class="btn btn-primary" type="submit">Сохранить материал</button>
@@ -282,22 +201,13 @@
           </form>
 
           <div class="toolbar">
-            <div class="searchbox">
-              ⌕ <input id="materialSearch" placeholder="Поиск по материалам…" aria-label="Поиск по материалам">
-            </div>
-
+            <div class="searchbox">⌕ <input id="materialSearch" placeholder="Поиск по материалам…" aria-label="Поиск по материалам"></div>
             <select id="materialFilter" aria-label="Фильтр материалов">
-              <option value="all">Все типы</option>
-              <option>Изображение</option>
-              <option>Видео</option>
-              <option>Аудио / музыка</option>
-              <option>Сценарий / текст</option>
-              <option>Документ</option>
-              <option>Референс</option>
-              <option>Другое</option>
+              <option value="all">Все типы</option><option>Изображение</option><option>Видео</option>
+              <option>Аудио / музыка</option><option>Сценарий / текст</option><option>Документ</option>
+              <option>Референс</option><option>Другое</option>
             </select>
           </div>
-
           <div id="materialList" class="material-list"></div>
         </section>
 
@@ -313,44 +223,26 @@
 
           <form id="taskForm" class="panel form-panel hidden">
             <div class="panel-heading">
-              <div>
-                <h3>Создать задачу</h3>
-                <p>Сформируем отдельные инструкции для каждого помощника</p>
-              </div>
+              <div><h3>Создать задачу</h3><p>Сформируем отдельные инструкции для каждого помощника</p></div>
               <button type="button" class="icon-button" id="closeTaskForm" aria-label="Закрыть">×</button>
             </div>
-
             <div class="form-grid">
               <label class="full">Название задачи
-                <input id="taskTitle" required maxlength="160"
-                  placeholder="Проверить непрерывность внешности Семёна">
+                <input id="taskTitle" required maxlength="160" placeholder="Проверить непрерывность внешности Семёна">
               </label>
-
               <label class="full">Что нужно сделать?
-                <textarea id="taskGoal" required rows="4"
-                  placeholder="Опиши результат, который хочешь получить. Например: проверить кадры, отметить ошибки и дать таймкоды…"></textarea>
+                <textarea id="taskGoal" required rows="4" placeholder="Опиши результат, который хочешь получить. Например: проверить кадры, отметить ошибки и дать таймкоды…"></textarea>
               </label>
-
               <label>Приоритет
-                <select id="taskPriority">
-                  <option>Обычный</option>
-                  <option>Высокий</option>
-                  <option>Срочный</option>
-                </select>
+                <select id="taskPriority"><option>Обычный</option><option>Высокий</option><option>Срочный</option></select>
               </label>
-
               <label>Материал
-                <select id="taskMaterial">
-                  <option value="">Без привязки</option>
-                </select>
+                <select id="taskMaterial"><option value="">Без привязки</option></select>
               </label>
-
               <label class="full">Дополнительный контекст
-                <textarea id="taskContext" rows="2"
-                  placeholder="Правила Семёна, ограничения генерации, что нельзя менять…"></textarea>
+                <textarea id="taskContext" rows="2" placeholder="Правила Семёна, ограничения генерации, что нельзя менять…"></textarea>
               </label>
             </div>
-
             <div class="form-actions">
               <span class="helper-text">Сначала оба помощника получают задачу независимо.</span>
               <button class="btn btn-primary" type="submit">Создать задачу</button>
@@ -358,21 +250,12 @@
           </form>
 
           <div class="toolbar">
-            <div class="searchbox">
-              ⌕ <input id="taskSearch" placeholder="Поиск по задачам…" aria-label="Поиск по задачам">
-            </div>
-
+            <div class="searchbox">⌕ <input id="taskSearch" placeholder="Поиск по задачам…" aria-label="Поиск по задачам"></div>
             <select id="taskFilter" aria-label="Фильтр задач">
-              <option value="all">Все статусы</option>
-              <option>Новая</option>
-              <option>Отправлено</option>
-              <option>Ожидает ответов</option>
-              <option>На рассмотрении</option>
-              <option>Завершена</option>
-              <option>Отложена</option>
+              <option value="all">Все статусы</option><option>Новая</option><option>Отправлено</option>
+              <option>Ожидает ответов</option><option>На рассмотрении</option><option>Завершена</option><option>Отложена</option>
             </select>
           </div>
-
           <div id="taskList" class="task-list"></div>
         </section>
 
@@ -387,29 +270,20 @@
 
           <div class="panel answer-task-panel">
             <label>Выбери задачу
-              <select id="answerTaskSelect">
-                <option value="">Сначала создай задачу</option>
-              </select>
+              <select id="answerTaskSelect"><option value="">Сначала создай задачу</option></select>
             </label>
-            <div id="selectedTaskSummary" class="selected-task-summary">
-              Выбери задачу, чтобы сохранить ответы Нокса и Ворона.
-            </div>
+            <div id="selectedTaskSummary" class="selected-task-summary">Выбери задачу, чтобы сохранить ответы Нокса и Ворона.</div>
           </div>
 
           <div class="answers-grid">
             <form id="noxAnswerForm" class="panel answer-panel">
               <div class="answer-head">
                 <span class="helper-avatar nox">N</span>
-                <div>
-                  <h3>Нокс</h3>
-                  <small>Творческий и технический анализ</small>
-                </div>
+                <div><h3>Нокс</h3><small>Творческий и технический анализ</small></div>
                 <span class="neutral-pill">ОТДЕЛЬНО</span>
               </div>
-
               <label>Ответ Нокса
-                <textarea id="noxAnswerText" rows="10"
-                  placeholder="Вставь сюда полный ответ Нокса…"></textarea>
+                <textarea id="noxAnswerText" rows="10" placeholder="Вставь сюда полный ответ Нокса…"></textarea>
               </label>
               <button class="btn btn-secondary btn-block" type="submit">Сохранить ответ Нокса</button>
             </form>
@@ -417,16 +291,11 @@
             <form id="ravenAnswerForm" class="panel answer-panel">
               <div class="answer-head">
                 <span class="helper-avatar raven">В</span>
-                <div>
-                  <h3>Ворон</h3>
-                  <small>Независимая проверка и логика</small>
-                </div>
+                <div><h3>Ворон</h3><small>Независимая проверка и логика</small></div>
                 <span class="neutral-pill">ОТДЕЛЬНО</span>
               </div>
-
               <label>Ответ Ворона
-                <textarea id="ravenAnswerText" rows="10"
-                  placeholder="Вставь сюда полный ответ Ворона…"></textarea>
+                <textarea id="ravenAnswerText" rows="10" placeholder="Вставь сюда полный ответ Ворона…"></textarea>
               </label>
               <button class="btn btn-secondary btn-block" type="submit">Сохранить ответ Ворона</button>
             </form>
@@ -434,28 +303,20 @@
 
           <form id="comparisonForm" class="panel comparison-panel">
             <div class="panel-heading">
-              <div>
-                <h3>Сопоставление</h3>
-                <p>Заполняем после независимых ответов</p>
-              </div>
+              <div><h3>Сопоставление</h3><p>Заполняем после независимых ответов</p></div>
               <span class="subtle-tag">РУЧНОЕ СРАВНЕНИЕ</span>
             </div>
-
             <div class="form-grid">
               <label>Совпадения
                 <textarea id="compareAgree" rows="3" placeholder="В чём мнения совпали…"></textarea>
               </label>
-
               <label>Разногласия
                 <textarea id="compareDiff" rows="3" placeholder="Что нужно проверить…"></textarea>
               </label>
-
               <label class="full">Открытые вопросы / таймкоды
-                <textarea id="compareQuestions" rows="2"
-                  placeholder="00:12 — проверить оружие; уточнить движение в финальном кадре…"></textarea>
+                <textarea id="compareQuestions" rows="2" placeholder="00:12 — проверить оружие; уточнить движение в финальном кадре…"></textarea>
               </label>
             </div>
-
             <button type="submit" class="btn btn-primary">Сохранить сопоставление</button>
           </form>
         </section>
@@ -472,46 +333,28 @@
 
           <form id="decisionForm" class="panel form-panel hidden">
             <div class="panel-heading">
-              <div>
-                <h3>Новое решение</h3>
-                <p>Окончательное слово остаётся за Виталием</p>
-              </div>
+              <div><h3>Новое решение</h3><p>Окончательное слово остаётся за Виталием</p></div>
               <button type="button" class="icon-button" id="closeDecisionForm" aria-label="Закрыть">×</button>
             </div>
-
             <div class="form-grid">
               <label class="full">Решение
-                <input id="decisionTitle" required maxlength="160"
-                  placeholder="Например: оставить оригинальный дизайн Когтя Луны">
+                <input id="decisionTitle" required maxlength="160" placeholder="Например: оставить оригинальный дизайн Когтя Луны">
               </label>
-
               <label>Статус
-                <select id="decisionStatus">
-                  <option>Утверждено</option>
-                  <option>На рассмотрении</option>
-                  <option>Отклонено</option>
-                  <option>Отложено</option>
-                </select>
+                <select id="decisionStatus"><option>Утверждено</option><option>На рассмотрении</option><option>Отклонено</option><option>Отложено</option></select>
               </label>
-
               <label>Связанная задача
-                <select id="decisionTask">
-                  <option value="">Без привязки</option>
-                </select>
+                <select id="decisionTask"><option value="">Без привязки</option></select>
               </label>
-
               <label class="full">Почему приняли решение
-                <textarea id="decisionReason" rows="3"
-                  placeholder="Основание, что проверить позже, версия материала…"></textarea>
+                <textarea id="decisionReason" rows="3" placeholder="Основание, что проверить позже, версия материала…"></textarea>
               </label>
             </div>
-
             <div class="form-actions">
               <span class="helper-text">Решение записывается в локальный журнал.</span>
               <button class="btn btn-primary" type="submit">Сохранить решение</button>
             </div>
           </form>
-
           <div id="decisionList" class="decision-list"></div>
         </section>
 
@@ -526,28 +369,20 @@
 
           <form id="settingsForm" class="panel settings-panel">
             <div class="panel-heading">
-              <div>
-                <h3>Личные чаты</h3>
-                <p>Вставь ссылки на нужные диалоги ChatGPT</p>
-              </div>
+              <div><h3>Личные чаты</h3><p>Вставь ссылки на нужные диалоги ChatGPT</p></div>
               <span class="neutral-pill">БЕЗ API</span>
             </div>
-
             <div class="form-grid">
               <label class="full">Ссылка на чат Нокса
                 <input id="noxChatUrl" type="url" placeholder="https://chatgpt.com/c/…">
               </label>
-
               <label class="full">Ссылка на чат Ворона
                 <input id="ravenChatUrl" type="url" placeholder="https://chatgpt.com/c/…">
               </label>
-
               <label class="full">Общий контекст проекта
-                <textarea id="projectContext" rows="5"
-                  placeholder="Постоянные правила проекта, описание Семёна, оружие, стиль, что запрещено менять…"></textarea>
+                <textarea id="projectContext" rows="5" placeholder="Постоянные правила проекта, описание Семёна, оружие, стиль, что запрещено менять…"></textarea>
               </label>
             </div>
-
             <div class="form-actions">
               <span class="helper-text">Настройки сохраняются в этом браузере.</span>
               <button class="btn btn-primary" type="submit">Сохранить настройки</button>
@@ -556,53 +391,32 @@
 
           <div class="panel setup-panel">
             <div class="panel-heading">
-              <div>
-                <h3>Состояние прототипа</h3>
-                <p>Что работает сейчас и что подключим позже</p>
-              </div>
+              <div><h3>Состояние прототипа</h3><p>Что работает сейчас и что подключим позже</p></div>
             </div>
-
             <div class="integration-row">
               <span class="integration-icon green">✓</span>
-              <div>
-                <b>Журнал в браузере</b>
-                <small>Материалы, задачи, ответы, решения</small>
-              </div>
+              <div><b>Журнал в браузере</b><small>Материалы, задачи, ответы, решения</small></div>
               <span class="tag tag-ready">РАБОТАЕТ</span>
             </div>
-
             <div class="integration-row">
               <span class="integration-icon blue">↗</span>
-              <div>
-                <b>Личные чаты ChatGPT</b>
-                <small>Копирование сообщения и открытие ссылки</small>
-              </div>
+              <div><b>Личные чаты ChatGPT</b><small>Копирование сообщения и открытие ссылки</small></div>
               <span class="tag tag-ready">РУЧНАЯ ПЕРЕДАЧА</span>
             </div>
-
             <div class="integration-row">
               <span class="integration-icon gray">☁</span>
-              <div>
-                <b>Google Drive / Sheets</b>
-                <small>Нужно настроить OAuth и разрешения</small>
-              </div>
+              <div><b>Google Drive / Sheets</b><small>Нужно настроить OAuth и разрешения</small></div>
               <span class="tag">СЛЕДУЮЩИЙ ЭТАП</span>
             </div>
-
             <div class="integration-row">
               <span class="integration-icon gray">AI</span>
-              <div>
-                <b>API-анализ видео и аудио</b>
-                <small>Нужны обработчик и безопасный сервер для секретов</small>
-              </div>
+              <div><b>API-анализ видео и аудио</b><small>Нужны обработчик и безопасный сервер для секретов</small></div>
               <span class="tag">ПОЗЖЕ</span>
             </div>
-
             <div class="notice warning">
               <span>!</span>
               <p>Не загружай личные материалы в публичный GitHub-репозиторий. Этот прототип сохраняет записи только в локальном хранилище текущего браузера и сам по себе не синхронизирует их между устройствами.</p>
             </div>
-
             <button id="exportData" type="button" class="btn btn-secondary">↓ Экспортировать журнал в JSON</button>
             <button id="clearData" type="button" class="btn btn-danger-outline">Очистить данные</button>
           </div>
@@ -624,15 +438,12 @@
         <h3 id="modalTitle">Передача задачи</h3>
         <button class="icon-button" id="modalClose" aria-label="Закрыть">×</button>
       </div>
-
       <p id="modalDescription"></p>
       <textarea id="promptPreview" rows="12" aria-label="Сообщение для помощника"></textarea>
-
       <div class="modal-actions">
         <button class="btn btn-secondary" id="copyPrompt">Копировать текст</button>
         <button class="btn btn-primary" id="openChat">Открыть чат</button>
       </div>
-
       <small class="helper-text">После открытия чата вставь сообщение и отправь его самостоятельно.</small>
     </div>
   </div>
